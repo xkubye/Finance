@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keuangan Pribadi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Keuangan <span>Pribadi</span></h1>
+    </header>
+
+    <div class="container">
+        <div class="balance-card">
+            <h2>Sisa Saldo Anda</h2>
+            <div class="balance-amount" id="balance">Rp 0</div>
+            <div style="display: flex; justify-content: space-around; font-size: 0.9rem;">
+                <div style="color: var(--g-green);">Masuk: <span id="money-plus">Rp 0</span></div>
+                <div style="color: var(--g-red);">Keluar: <span id="money-minus">Rp 0</span></div>
+            </div>
+        </div>
+
+        <div class="input-card">
+            <h3>Tambah Transaksi Baru</h3>
+            <form id="form">
+                <div class="form-group">
+                    <label>Keterangan / Label</label>
+                    <input type="text" id="text" placeholder="Contoh: Gaji, Makan..." required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Jumlah Uang</label>
+                    <input type="number" id="amount" placeholder="0" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Jenis Transaksi</label>
+                    <select id="type">
+                        <option value="plus">Pemasukan (+)</option>
+                        <option value="minus">Pengeluaran (-)</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-add">Simpan Data</button>
+            </form>
+        </div>
+
+        <div class="history-header">
+            <h3>Riwayat Data</h3>
+            <small style="color: #5f6368" id="data-count">0 Data</small>
+        </div>
+        
+        <ul id="list" class="list-container">
+            </ul>
+
+        <div class="action-buttons">
+            <button class="btn-action" id="btn-export">Download Data</button>
+            <button class="btn-action" onclick="window.print()">Print / PDF</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
